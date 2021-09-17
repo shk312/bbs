@@ -1,0 +1,22 @@
+<h1>1行掲示板</h1>
+<form action = "/" method = "post">
+  <label for = "article">投稿</label>
+  <input type="text" name ="article">
+  <p></p>
+  <label for = "article">名前</label>
+  <input type ="text" name = "name">
+  <button type="submit">送信する</button>
+</form>
+
+<h2>投稿一覧</h2>
+<table>
+  <tr><th>投稿</th><th>名前</th></tr>
+  <% @articles.each do |line| %>
+    <tr>
+    <% colomn = line.split(",") %>
+    <% colomn.each do |item| %>
+      <td><%= item %></td>
+    <% end %>
+    </tr>
+  <% end %>
+</table>  
